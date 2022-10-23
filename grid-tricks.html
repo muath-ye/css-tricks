@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: lightblue;  
+        }
+        .parent-1{
+            display: grid;
+            /* passed */
+            place-items: center;
+        }
+        .parent-2{
+            display: grid;
+            /* passed */
+            grid-template-columns: minmax(100px, 200px) 1fr;
+        }
+        .parent-2 aside{
+            background: lightcoral;
+        }
+        .parent-2 div{
+            background: lightgreen;
+        }
+        .parent-3 {
+            display: grid;
+            /* not working */
+            grid-template-rows: auto 1fr auto;
+        }
+        .parent-3 .header,
+        .parent-3 .footer{
+            background: lightgreen;
+        }
+        .parent-3 .content{
+            background: lightcoral;
+            
+        }
+    </style>
+    <!-- <div class="parent-1">
+        <input type="text" value="hi">
+    </div> -->
+    <!-- <div class="parent-2">
+        <aside>
+            sidebar
+        </aside>
+        <div>
+            <p>Main elements content</p>
+            <p>Main elements content</p>
+        </div>
+    </div> -->
+    <div class="parent-3">
+        <div class="header"><p>header</p></div>
+        <div class="content"><p>content</p></div>
+        <div class="footer"><p>footer</p></div>
+    </div>
+</body>
+</html>
